@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'black_belt/css/style.css' %}" media="screen" title="no title">
+
+    <title>Add an item</title>
+  </head>
+  <body>
+    <div class="container">
+      <a href="/dashboard">Home</a>
+      <a href="/logout">Logout</a>
+      <h1>Create a New Wish List Item</h1>
+      {% if messages %}
+      <ul class="invalid">
+        {% for message in messages %}
+          <li> {{ message }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      <form class="" action="wish_items/create" method="post">
+        {% csrf_token %}
+        <p>
+          Item/Product: <input type="text" name="product" value="">
+        </p>
+        <button type="submit" name="submit">Add</button>
+      </form>
+    </div>
+  </body>
+</html>

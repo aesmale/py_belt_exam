@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Log in registration</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'login/css/style.css' %}" media="screen" title="no title">
+  </head>
+  <body>
+    <div class="container">
+      <div class="register">
+        <h1>Register for an Account!</h1>
+        {% if messages %}
+        <ul class="invalid">
+          {% for message in messages %}
+            <!-- {% if 'register' in message.tags %} -->
+            <li> {{ message }}</li>
+            <!-- {% endif %} -->
+          {% endfor %}
+        </ul>
+        {% endif %}
+        <form class="" action="/register" method="post">
+          {% csrf_token %}
+          <label for="username">Username:<input type="text" name="username" id="username"></label>
+          <label for="my_name">Name:<input type="text" name="my_name" id="my_name"></label>
+          <label for="email">Email:<input type="text" name="email" id="email"></label>
+          <label for="date">Date Hired:<input type="date" name="date" id="date"></label>
+          <label for="password">Password:<input type="password" name="password" id="password"></label>
+          <label for="confirm">Confirm Password:<input type="password" name="confirm" id="confirm"></label>
+          <button type="submit" name="name">Register</button>
+        </form>
+        <h2>Already Have an Account? Login!</h2>
+        {% if messages %}
+        <ul class="invalid">
+          {% for message in messages %}
+            {% if 'login' in message.tags %}
+            <li> {{ message }}</li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <form class="login" action="/login" method="post">
+          {% csrf_token %}
+          <input type="text" name="email" value="email">
+          <input type="password" name="password" value="password">
+          <button type="login" name="button">Login</button>
+        </form>
+  </body>
+</div>
+</div>
+</html>

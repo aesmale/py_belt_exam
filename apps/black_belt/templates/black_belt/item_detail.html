@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'black_belt/css/style.css' %}" media="screen" title="no title">
+
+    <title>{{item.name}}</title>
+  </head>
+  <body>
+    <div class="container">
+      <a href="/dashboard">Home</a>
+      <a href="/logout">Logout</a>
+      <h1>{{item.name}}</h1>
+      <h2>Users who have this product on their wishlist!</h2>
+      <ul>
+        {% for wishlist in all_wishlists %}
+        <li>{{wishlist.user.name}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </body>
+</html>

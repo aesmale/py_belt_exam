@@ -1,0 +1,30 @@
+.invalid {
+  color: red;
+}
+
+.register {
+  text-align: center;
+}
+
+body {
+  background-color: pink;
+}
+
+.container {
+  background-color: white;
+  border: 5px solid pink;
+}
+
+label {
+  display: block;
+  padding: 20px;
+}
+
+.logged {
+  margin-left: 50px;
+  display: inline-block;
+  float: right;
+  font-weight: bolder;
+  text-align: right;
+
+}
